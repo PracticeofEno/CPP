@@ -1,5 +1,5 @@
 NAME = phonebook
-CFLAGS =
+CFLAGS = -Wall -Wextra -Werror
 CC = clang++
 
 CFLAGS += -I ./inc/
@@ -20,7 +20,6 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean :
-	rm -rf $(SURP)
 	rm -f $(OBJS) $(C_OBJS)
 
 fclean :

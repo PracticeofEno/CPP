@@ -44,7 +44,7 @@ void PhoneBook::printSearch(std::string str, bool last)
 	else
 	{
 		std::cout.width(11 - str.length());
-		for (int j = 0; j < str.length(); j++)
+		for (size_t j = 0; j < str.length(); j++)
 		{
 			std::cout << str.at(j);
 		}

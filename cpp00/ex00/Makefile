@@ -1,5 +1,5 @@
 NAME = megaphone
-CFLAGS = 
+CFLAGS = -Wall -Wextra -Werror
 CC = clang++
 
 FILES = 
@@ -12,14 +12,13 @@ OBJS = $(SRCS:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) -g -o $(NAME) main.cpp $(SRCS) $(LIBFT_FLAGS) -lpthread
+	$(CC) $(CFLAGS) -g -o $(NAME) main.cpp $(SRCS) $(LIBFT_FLAGS)
 	
 clean :
-	rm -rf $(SURP)
-	rm -f $(OBJS) $(C_OBJS)
+	rm -rf $(NAME)
 
 fclean :
-	rm -f $(OBJS) $(C_OBJS) $(NAME)
+	rm -rf $(OBJS) $(C_OBJS) $(NAME)
 	
 re : fclean all
 
