@@ -12,6 +12,8 @@
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 #include <iostream>
+#include <time.h>
+#include <ctime>
 
 // ************************************************************************** //
 //                               Account Class                                //
@@ -23,12 +25,14 @@ class Account {
 public:
 
 	typedef Account		t;
+	
 
 	static int	getNbAccounts( void );
 	static int	getTotalAmount( void );
 	static int	getNbDeposits( void );
 	static int	getNbWithdrawals( void );
 	static void	displayAccountsInfos( void );
+	static void printTimeStamp( void ) ;
 
 	Account( int initial_deposit );
 	~Account( void );
@@ -37,6 +41,7 @@ public:
 	bool	makeWithdrawal( int withdrawal );
 	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
+	
 
 
 private:
@@ -45,7 +50,8 @@ private:
 	static int	_totalAmount;
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
-
+	static struct tm *_t;
+	
 	static void	_displayTimestamp( void );
 
 	int				_accountIndex;

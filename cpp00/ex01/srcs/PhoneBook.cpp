@@ -80,6 +80,11 @@ void PhoneBook::detailContract()
 	std::cout << "Input Index for detail" << std::endl;
 	std::cout << "index is start zero(0)" << std::endl;
 	std::cin >> n;
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		return ;
+	}
 	if (n <= size)
 	{
 		std::cout << contracts[n].getFirstName() << std::endl;

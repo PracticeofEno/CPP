@@ -15,22 +15,35 @@ char	convertBig(char c)
 int main(int argc, char **argv)
 {
 	char *tmp;
-	int  i;
-	int length;
+	std::string str;
 
-	if (argc != 2)
-		return (0);
-	tmp = argv[1];
-	length = 0;
-	while (*tmp)
+	if (argc > 1)
 	{
-		length++;
-		tmp = tmp + 1;
+		for (size_t i =1; i < (size_t)argc; i++)
+		{
+			tmp = argv[i];
+			while (*tmp)
+			{
+				str.push_back(*tmp);
+				tmp++;
+			}
+			for (size_t j = 0; j < str.size(); j++)
+			{
+				str[j] = toupper(str[j]);
+			}
+			std::cout << str;
+			str.clear();
+		}
 	}
-	for(i = 0; i < length; i++)
+	else
 	{
-		std::cout << convertBig(argv[1][i]);
+		std::getline(std::cin, str);
 	}
+	for (size_t j = 0; j < str.size(); j++)
+	{
+		str[j] = toupper(str[j]);
+	}
+	std::cout << str;
 	std::cout << std::endl;
 	return (0);
 }
