@@ -9,12 +9,13 @@ class PhoneBook
 	private:
 		Contract contracts[8];
 		int		 size;
+		int		 _index;
 		bool		isNotEmpty(int i);
 		void		printSearch(std::string str, bool last);
 
 	public:
 		PhoneBook();
-		void		addContract(class Contract* c);
+		void		addContract();
 		void		searchContract();
 		void		detailContract();
 };

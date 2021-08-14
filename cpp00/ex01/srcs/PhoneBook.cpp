@@ -1,16 +1,40 @@
 #include "PhoneBook.hpp"
 
-void PhoneBook::addContract(class Contract* c)
+void PhoneBook::addContract()
 {
-	contracts[size].setFirstName(c->getFirstName());
-	contracts[size].setLastName(c->getLastName());
-	contracts[size].setNickname(c->getNickname());
-	contracts[size].setPhoneNumber(c->getPhoneNumber());
-	contracts[size].setDark(c->getDark());
+	std::string tmp;
+
+	std::cout << "please input First Name" << std::endl;
+ 	std::cin >> tmp;
+	contracts[_index].setFirstName(tmp);
+	tmp.clear();
+
+	std::cout << "please input Last Name" << std::endl;
+ 	std::cin >> tmp;
+	contracts[_index].setLastName(tmp);
+	tmp.clear();
+
+	std::cout << "please input Nick Name" << std::endl;
+ 	std::cin >> tmp;
+	contracts[_index].setNickname(tmp);
+	tmp.clear();
+
+	std::cout << "please input PhoneNumber" << std::endl;
+ 	std::cin >> tmp;
+	contracts[_index].setPhoneNumber(tmp);
+	tmp.clear();
+
+	std::cout << "please input tmp" << std::endl;
+ 	std::cin >> tmp;
+	contracts[_index].setDark(tmp);
+	tmp.clear();
+
 	size++;
+	_index++;
 	if (size == 8)
 		size --;
-	delete c;
+	if (_index == 8)
+		_index = 0;
 }
 
 bool PhoneBook::isNotEmpty(int i)
@@ -98,4 +122,5 @@ void PhoneBook::detailContract()
 PhoneBook::PhoneBook()
 {
 	this->size = 0;
+	this->_index = 0;
 }
