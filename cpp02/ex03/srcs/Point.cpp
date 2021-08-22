@@ -25,13 +25,16 @@ Fixed Point::getY(void) const
 	return _y;
 }
 
+// ((Xa - Xp) * (Yc - Yp)) - ((Xc - Xp) * (Ya - Yp))
+// ((Xc - Xp) * (Yb - Yp)) - ((Xb - Xp) * (Yc - Yp))
+// ((Xb - Xp) * (Ya - Yp)) - ((Xa - Xp) * (Yb - Yp))
 bool bsp(Point const a, Point const b, Point const c, Point const p)
 {
 	Fixed sik1, sik2, sik3;
 
-	sik1 = ( ( a.getX() - p.getX() ) * ( c.getY() - p.getY() ) ) - ( (c.getX() - p.getX()) - (a.getY() - p.getY()) );
-	sik2 = ( ( c.getX() - p.getX() ) * ( b.getY() - p.getY() ) ) - ( (b.getX() - p.getX()) - (c.getY() - p.getY()) );
-	sik3 = ( ( b.getX() - p.getX() ) * ( a.getY() - p.getY() ) ) - ( (a.getX() - p.getX()) - (b.getY() - p.getY()) );
+	sik1 = ( ( a.getX() - p.getX() ) * ( c.getY() - p.getY() ) ) - ( (c.getX() - p.getX()) * (a.getY() - p.getY()) );
+	sik2 = ( ( c.getX() - p.getX() ) * ( b.getY() - p.getY() ) ) - ( (b.getX() - p.getX()) * (c.getY() - p.getY()) );
+	sik3 = ( ( b.getX() - p.getX() ) * ( a.getY() - p.getY() ) ) - ( (a.getX() - p.getX()) * (b.getY() - p.getY()) );
 
 	if (sik1 > 0 && sik2 > 0 && sik3 > 0)
 		return true;
