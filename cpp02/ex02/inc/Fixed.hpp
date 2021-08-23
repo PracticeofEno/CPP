@@ -20,7 +20,7 @@ public :
 	Fixed  operator-(const Fixed tmp);
 	Fixed  operator*(const Fixed tmp);
 	Fixed  operator/(const Fixed tmp);
-	friend std::ostream& operator << (std::ostream& os, const Fixed& fixed);
+
 	Fixed& operator++( void );
 	Fixed operator++(int);
 	Fixed& operator--( void );
@@ -49,4 +49,5 @@ private :
 	static const int _nBits = 8;
 };
 
+std::ostream& operator << (std::ostream& os, const Fixed& fixed);
 #endif
