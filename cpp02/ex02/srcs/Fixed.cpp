@@ -53,7 +53,7 @@ Fixed Fixed::operator/(Fixed tmp)
 
 Fixed& Fixed::operator++( void )
 {
-	_fixedPointValue = _fixedPointValue + 1;
+	_fixedPointValue = _fixedPointValue + 1 ;
 	return (*this);
 }
 

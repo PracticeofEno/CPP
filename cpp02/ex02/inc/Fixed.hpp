@@ -15,11 +15,11 @@ public :
 	Fixed();
 	~Fixed();
 	Fixed(const Fixed& tmp);
-	Fixed& operator = (const Fixed tmp);
-	Fixed  operator + (const Fixed tmp);
-	Fixed  operator - (const Fixed tmp);
-	Fixed  operator * (const Fixed tmp);
-	Fixed  operator / (const Fixed tmp);
+	Fixed& operator=(const Fixed tmp);
+	Fixed  operator+(const Fixed tmp);
+	Fixed  operator-(const Fixed tmp);
+	Fixed  operator*(const Fixed tmp);
+	Fixed  operator/(const Fixed tmp);
 	friend std::ostream& operator << (std::ostream& os, const Fixed& fixed);
 	Fixed& operator++( void );
 	Fixed operator++(int);
