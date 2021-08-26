@@ -8,19 +8,21 @@ class ClapTrap {
 public:
 	ClapTrap(std::string name);
 	ClapTrap();
-	ClapTrap& operator=(ClapTrap tmp);
 	virtual ~ClapTrap();
-	virtual void attack(const std::string& target);
+	ClapTrap(ClapTrap& tmp);
+	ClapTrap& operator=(ClapTrap tmp);
+
+	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	virtual int	getDamage(void);
-	virtual void setDamage(int damage);
-	virtual int getEnergy(void);
-	virtual int getHitPoint(void);
-	virtual std::string getName(void);
-	virtual void setName(std::string name);
-	virtual void setHitPoint(int hit);
-	virtual void setEnergy(unsigned int energy);
+	int	getDamage(void);
+	void setDamage(int damage);
+	int getEnergy(void);
+	int getHitPoint(void);
+	std::string getName(void);
+	void setName(std::string name);
+	void setHitPoint(int hit);
+	void setEnergy(unsigned int energy);
 
 private:
 	std::string _name;

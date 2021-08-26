@@ -9,6 +9,9 @@ public:
 	ClapTrap(std::string name);
 	ClapTrap();
 	virtual ~ClapTrap();
+	ClapTrap(ClapTrap& tmp);
+	ClapTrap& operator=(ClapTrap tmp);
+
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);

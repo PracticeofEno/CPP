@@ -1,12 +1,22 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("")
+ScavTrap::ScavTrap()
 {
 	setEnergy(50);
+	std::cout << "ScavTrap : '" << getName() << "' Constructor Called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(ScavTrap& tmp)
 {
+	setName(tmp.getName());
+	setHitPoint(tmp.getHitPoint());
+	setEnergy(tmp.getEnergy());
+	std::cout << "ScavTrap : '" << getName() << "' Constructor Called" << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string name)
+{
+	setName(name);
 	setHitPoint(100);
 	setEnergy(50);
 	setDamage(20);
@@ -18,6 +28,15 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap : '" << getName() << "' Destructor Called" << std::endl;
 }
 
+ScavTrap& ScavTrap::operator=(ScavTrap tmp)
+{
+	this->setName(tmp.getName());
+	this->setDamage(tmp.getDamage());
+	this->setHitPoint(tmp.getHitPoint());
+	this->setEnergy(tmp.getEnergy());
+	return *this;
+}
+
 void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap '" << getName() << "' have enterred in Gate Keeper Mode " << std::endl;
@@ -25,5 +44,5 @@ void ScavTrap::guardGate()
 
 void ScavTrap::attack(const std::string& target)
 {
-	std::cout << "ScavTrap <" << getName() << "> attacks  <" << target << "> causing <" << getHitPoint() << "> point of damage!" << std::endl;
+	std::cout << "ScavTrap '" << getName() << "' attack  " << target << std::endl;
 }

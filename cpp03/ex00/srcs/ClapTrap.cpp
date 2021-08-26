@@ -8,6 +8,14 @@ ClapTrap::ClapTrap()
 	std::cout << "ClapTrap : '" << _name << "' Constructor Called" << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap& tmp)
+{
+	setName(tmp.getName());
+	setHitPoint(tmp.getHitPoint());
+	setEnergy(tmp.getEnergy());
+	std::cout << "ClapTrap : '" << _name << "' Constructor Called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
 	_name = name;
@@ -21,6 +29,12 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap : '" << _name << "' Destructor Called" << std::endl;
 }
 
+ClapTrap& ClapTrap::operator=(ClapTrap tmp)
+{
+	this->setName(tmp.getName());
+	return *this;
+}
+
 void ClapTrap::setDamage(int damage)
 {
 	_damage = damage;
@@ -31,12 +45,22 @@ int ClapTrap::getDamage(void)
 	return _damage;
 }
 
+void ClapTrap::setName(std::string name)
+{
+	_name = name;
+}
+
+std::string ClapTrap::getName(void)
+{
+	return _name;
+}
+
 void ClapTrap::setHitPoint(int hp)
 {
 	_hitPoint = hp;
 }
 
-int ClapTrap::getHitpoint(void)
+int ClapTrap::getHitPoint(void)
 {
 	return _hitPoint;
 }
