@@ -9,17 +9,22 @@ public:
 	ClapTrap(std::string name);
 	ClapTrap();
 	~ClapTrap();
-	void attack(const std::string& target);
+	virtual void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+
+	void setDamage(int damage);
 	int	getDamage(void);
-	int getEnergy(void);
+	unsigned int getEnergy(void);
+	void setEnergy(unsigned int energy);
+	int getHitpoint(void);
+	void setHitPoint(int hp);
 
 private:
 	std::string _name;
-	const int _hitPoint = 10;
-	unsigned int _energyPoint = 10;
-	int _damage = 0;
+	int _hitPoint;
+	unsigned int _energyPoint;
+	int _damage;
 };
 
 #endif

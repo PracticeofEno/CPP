@@ -23,9 +23,9 @@ public:
 
 private:
 	std::string _name;
-	int _hitPoint = 10;
-	unsigned int _energyPoint = 10;
-	int _damage = 0;
+	int _hitPoint;
+	unsigned int _energyPoint;
+	int _damage;
 };
 
 #endif

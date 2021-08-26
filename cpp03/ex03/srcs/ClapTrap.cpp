@@ -3,12 +3,16 @@
 ClapTrap::ClapTrap()
 {
 	_name = "";
+	setHitPoint(10);
+	setEnergy(10);
 	std::cout << "ClapTrap : '" << _name << "' Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 {
 	_name = name;
+	setHitPoint(10);
+	setEnergy(10);
 	std::cout << "ClapTrap : '" << _name << "' Constructor Called" << std::endl;
 }
 

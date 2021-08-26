@@ -19,5 +19,8 @@ int main()
 	ScavTrap tmp2("scav1");
 	std::cout << tmp2.getHitPoint() << " | " << tmp2.getEnergy() << " | " << tmp2.getDamage() << std::endl;
 	tmp2.guardGate();
+	std::cout << "----------------------------------------------------------" << std::endl;
+	tmp.attack("1");
+	tmp2.attack("2");
 	return (0);
 }

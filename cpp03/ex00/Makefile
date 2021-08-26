@@ -1,5 +1,5 @@
 NAME = ex00
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = clang++
 
 CFLAGS += -I ./inc/

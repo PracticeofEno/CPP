@@ -3,18 +3,52 @@
 ClapTrap::ClapTrap()
 {
 	_name = "";
+	setHitPoint(10);
+	setEnergy(10);
 	std::cout << "ClapTrap : '" << _name << "' Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 {
 	_name = name;
+	setHitPoint(10);
+	setEnergy(10);
 	std::cout << "ClapTrap : '" << _name << "' Constructor Called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap : '" << _name << "' Destructor Called" << std::endl;
+}
+
+void ClapTrap::setDamage(int damage)
+{
+	_damage = damage;
+}
+
+int ClapTrap::getDamage(void)
+{
+	return _damage;
+}
+
+void ClapTrap::setHitPoint(int hp)
+{
+	_hitPoint = hp;
+}
+
+int ClapTrap::getHitpoint(void)
+{
+	return _hitPoint;
+}
+
+void ClapTrap::setEnergy(unsigned int energy)
+{
+	_energyPoint = energy;
+}
+
+unsigned int ClapTrap::getEnergy(void)
+{
+	return _energyPoint;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -38,14 +72,4 @@ void ClapTrap::beRepaired(unsigned int amount)
 		_energyPoint = 100;
 	else
 		_energyPoint = _energyPoint + amount;
-}
-
-int ClapTrap::getDamage(void)
-{
-	return _damage;
-}
-
-int ClapTrap::getEnergy(void)
-{
-	return _energyPoint;
 }
