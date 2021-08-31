@@ -22,6 +22,13 @@ int main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 
+	me->unequip(0);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+
 	delete bob;
 	delete me;
 	delete src;

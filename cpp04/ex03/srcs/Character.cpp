@@ -37,6 +37,7 @@ Character::Character(std::string name)
 {
 	_name = name;
 	mIndex = 0;
+	trashIndex = 0;
 	for (int i=0; i<4; i++)
 	{
 		inventory[i] = 0;
@@ -74,10 +75,13 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	if (idx < mIndex && trashIndex < 4)
+	if (inventory[idx] != 0)
 	{
-		trash[trashIndex] = inventory[idx];
-		trashIndex++;
+		if (trashIndex < 4 && (idx < 4 && idx >= 0))
+		{
+			trash[trashIndex] = inventory[idx];
+			trashIndex++;
+		}
 		inventory[idx] = 0;
 		mIndex--;
 	}
