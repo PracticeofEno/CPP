@@ -2,7 +2,12 @@
 
 Character::Character()
 {
-
+	mIndex = 0;
+	trashIndex = 0;
+	for (int i=0; i<4; i++)
+	{
+		inventory[i] = 0;
+	}
 }
 
 Character::~Character()
@@ -11,11 +16,16 @@ Character::~Character()
 	{
 		delete inventory[i];
 	}
+	for (int i = trashIndex -1; i >= 0; i--)
+	{
+		delete trash[i];
+	}
 }
 
 Character::Character(Character& tmp)
 {
 	mIndex = tmp.mIndex;
+	trashIndex = tmp.trashIndex;
 	_name = tmp.getName();
 	for(int i = 0; i < tmp.mIndex; i++)
 	{
@@ -26,6 +36,11 @@ Character::Character(Character& tmp)
 Character::Character(std::string name)
 {
 	_name = name;
+	mIndex = 0;
+	for (int i=0; i<4; i++)
+	{
+		inventory[i] = 0;
+	}
 }
 
 Character& Character::operator=(Character& tmp)
@@ -41,24 +56,41 @@ Character& Character::operator=(Character& tmp)
 
 void Character::equip(AMateria* m)
 {
-	if (mIndex < 4)
+	int idx = -1;
+	for (int i=0; i < 4; i++)
 	{
-		inventory[mIndex] = m;
+		if (inventory[i] == 0)
+		{
+			idx = i;
+			break ;
+		}
+	}
+	if (idx != -1)
+	{
+		inventory[idx] = m;
 		mIndex++;
 	}
 }
 
 void Character::unequip(int idx)
 {
-	if (idx < mIndex)
-		inventory[idx]->setActive(false);
+	if (idx < mIndex && trashIndex < 4)
+	{
+		trash[trashIndex] = inventory[idx];
+		trashIndex++;
+		inventory[idx] = 0;
+		mIndex--;
+	}
 }
 
 void Character::use(int idx, ICharacter& target)
 {
 	if (idx < mIndex)
 	{
-		inventory[idx]->use(target);
+		if (inventory[idx] != 0)
+		{
+			inventory[idx]->use(target);
+		}
 	}
 }
 

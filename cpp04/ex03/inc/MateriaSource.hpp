@@ -16,7 +16,10 @@ public:
 	AMateria* createMateria(const std::string& type);
 
 	int	mIndex;
+	int tmp2Index;
 	AMateria* materias[4];
+	AMateria* tmp[4];
+	AMateria* tmp2[4];
 	
 };
 #endif

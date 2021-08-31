@@ -45,6 +45,7 @@ std::string Brain::getIdea(int index)
 
 Brain::Brain(Brain& tmp)
 {
+	_ideasIndex = 0;
 	for (int i = 0; i < tmp.getIndex(); i++)
 	{
 		addIdea(tmp.getIdea(i));

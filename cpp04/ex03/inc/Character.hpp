@@ -19,7 +19,9 @@ public:
 	void use(int idx, ICharacter& target);
 
 	int	mIndex;
+	int trashIndex;
 	AMateria* inventory[4];
+	AMateria* trash[4];
 
 private:
 	std::string _name;
