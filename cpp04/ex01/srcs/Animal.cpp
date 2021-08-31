@@ -11,6 +11,17 @@ Animal::~Animal()
 	std::cout << "Animal Destructor Called" << std::endl;
 }
 
+Animal::Animal(Animal& tmp)
+{
+	this->setType(tmp.getType());
+}
+
+Animal& Animal::operator=(Animal tmp)
+{
+	this->setType(tmp.getType());
+	return *this;
+}
+
 void Animal::makeSound(void) const
 {
 	std::cout << "this is animal sound : " << type << std::endl;

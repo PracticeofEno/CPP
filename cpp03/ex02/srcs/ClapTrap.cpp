@@ -12,6 +12,7 @@ ClapTrap::ClapTrap(ClapTrap& tmp)
 {
 	setName(tmp.getName());
 	setHitPoint(tmp.getHitPoint());
+	setDamage(tmp.getDamage());
 	setEnergy(tmp.getEnergy());
 	std::cout << "ClapTrap : '" << _name << "' Constructor Called" << std::endl;
 }

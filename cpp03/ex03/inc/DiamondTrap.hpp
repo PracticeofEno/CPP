@@ -16,10 +16,10 @@ public:
 
 	void attack(const std::string& target);
 	void whoAmI(void);
+	std::string getName(void);
 
 private:
 	std::string _name;
-
 };
 
 

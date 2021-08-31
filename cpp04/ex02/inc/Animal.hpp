@@ -9,9 +9,8 @@ public :
 	Animal();
 	virtual ~Animal();
 	Animal(Animal& tmp);
-	Animal& operator=(Animal tmp);
 
-	virtual void makeSound(void) const;
+	virtual void makeSound(void) const=0;
 	std::string getType(void) const;
 	void setType(std::string type);
 
@@ -21,5 +20,4 @@ protected:
 private:
 
 };
-std::ostream& operator << (std::ostream& os, const Animal fixed);
 #endif

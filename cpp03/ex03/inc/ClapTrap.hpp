@@ -19,7 +19,7 @@ public:
 	void setDamage(int damage);
 	int getEnergy(void);
 	int getHitPoint(void);
-	std::string getName(void);
+	virtual std::string getName(void);
 	void setName(std::string name);
 	void setHitPoint(int hit);
 	void setEnergy(unsigned int energy);

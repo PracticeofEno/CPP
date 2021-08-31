@@ -1,13 +1,14 @@
-NAME = ex01
+NAME = ex03
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = clang++
 
 CFLAGS += -I ./inc/
 
-FILES =  Animal \
-		 Dog \
-		 Cat \
-		 Brain
+FILES = AMateria \
+		Character \
+		MateriaSource \
+		Cure \
+		Ice \
 
 SRCS = $(addprefix srcs/, $(addsuffix .cpp, $(FILES))) 
 
