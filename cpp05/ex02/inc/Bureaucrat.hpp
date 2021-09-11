@@ -4,14 +4,16 @@
 #include <iostream>
 #include <exception>
 
-class Bueraucrat {
+class Form;
+
+class Bureaucrat {
 
 public:
-	Bueraucrat();
-	Bueraucrat(std::string name, int grade);
-	Bueraucrat(Bueraucrat& tmp);
-	virtual ~Bueraucrat();
-	Bueraucrat& operator=(Bueraucrat& tmp);
+	Bureaucrat();
+	Bureaucrat(std::string name, int grade);
+	Bureaucrat(Bureaucrat& tmp);
+	virtual ~Bureaucrat();
+	Bureaucrat& operator=(Bureaucrat& tmp);
 
 	std::string getName() const;
 	int getGrade() const;
@@ -19,6 +21,8 @@ public:
 	void setName(std::string name);
 	void upGrade();
 	void downGrade();
+	void signForm(Form& form);
+	void executeForm(const Form& form);
 
 	class GradeTooHighException : public std::exception {
 		public :
@@ -41,5 +45,5 @@ private:
 	int _grade;
 };
 
-std::ostream& operator<< (std::ostream& os, const Bueraucrat& tmp);
+std::ostream& operator<< (std::ostream& os, const Bureaucrat& tmp);
 #endif

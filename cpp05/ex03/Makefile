@@ -1,10 +1,15 @@
-NAME = ex00
+NAME = ex03
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=leak
 CC = clang++
 
 CFLAGS += -I ./inc/
 
-FILES = Bureaucrat
+FILES = Bureaucrat \
+		PresidentPardonForm \
+		Form \
+		RobotomyRequestForm \
+		ShrubberyCreationForm \
+		Intern
 
 SRCS = $(addprefix srcs/, $(addsuffix .cpp, $(FILES))) 
 
