@@ -11,8 +11,9 @@ int main()
 		//Form form3("form3", -123 , -123);
 		//Form form4("form4", 156 , 156);
 
-		haha.signForm(form1);
-		haha.signForm(form2);
+		std::cout << form1;
+		//haha.signForm(form1);
+		//haha.signForm(form2);
 		//haha.signForm(form3);
 		//haha.signForm(form4);
 	}

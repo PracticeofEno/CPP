@@ -35,12 +35,12 @@ public:
 			std::string  _message;
 	};
 
-
 private:
 	const std::string _name;
 	bool _signed;
 	const int _reqSign;
 	const int _reqExe;
 };
+std::ostream& operator<< (std::ostream& os, const Form& tmp);
 
 #endif

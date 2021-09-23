@@ -14,10 +14,11 @@ int main()
 	Bureaucrat people3("peo3", 46);
 	Bureaucrat people4("peo4", 6);
 
-	PresidentPardonForm p("preForm", "home");
+	ShrubberyCreationForm p("ShruForm", "home");
 	RobotomyRequestForm p2("roboForm", "robo");
-	ShrubberyCreationForm p3("ShruForm", "home");
+	PresidentPardonForm p3("preForm", "home");
 
+/*
 	people1.executeForm(p);
 	people1.signForm(p);
 	people1.executeForm(p);
@@ -33,8 +34,9 @@ int main()
 	p.setSigned(false);
 	p2.setSigned(false);
 	p3.setSigned(false);
-
+*/
 	std::cout << std::endl << std::endl;
+	/*
 
 	people2.executeForm(p);
 	people2.signForm(p);
@@ -47,21 +49,23 @@ int main()
 	people2.executeForm(p3);
 	people2.signForm(p3);
 	people2.executeForm(p3);
+	*/
 
+/*
 	p.setSigned(false);
 	p2.setSigned(false);
 	p3.setSigned(false);
 	std::cout << std::endl << std::endl;
 
-	people3.executeForm(p);
+	//people3.executeForm(p);
 	people3.signForm(p);
 	people3.executeForm(p);
 
-	people3.executeForm(p2);
+	//people3.executeForm(p2);
 	people3.signForm(p2);
 	people3.executeForm(p2);
 
-	people3.executeForm(p3);
+	//people3.executeForm(p3);
 	people3.signForm(p3);
 	people3.executeForm(p3);
 
@@ -85,6 +89,7 @@ int main()
 	p.setSigned(false);
 	p2.setSigned(false);
 	p3.setSigned(false);
+	*/
 
 	return (0);
 }
