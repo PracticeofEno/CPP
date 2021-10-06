@@ -10,6 +10,7 @@ int main()
 		std::cout << intZero.getSize() << std::endl;
 		std::cout << intZero[0] << std::endl;
 		std::cout << intZero[1] << std::endl;
+		std::cout << intZero[2] << std::endl;
 	}
 	catch(const std::exception& e)
 	{

@@ -4,7 +4,7 @@ CC = clang++
 
 CFLAGS += -I ./inc/
 
-FILES = 
+FILES = MutantStack
 
 SRCS = $(addprefix srcs/, $(addsuffix .cpp, $(FILES))) 
 
@@ -12,8 +12,8 @@ OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
 
-$(NAME) : 
-	$(CC) $(CFLAGS) -g -o $(NAME) main2.cpp 
+$(NAME) : $(OBJS)
+	$(CC) $(CFLAGS) -g -o $(NAME) $(OBJS) main.cpp 
 
 %.o : %.cpp
 	$(CC) $(CFLAGS) -g -c -o $@ $^

@@ -29,7 +29,8 @@ public:
 
 		if (this == &tmp)
 			return (*this);
-
+		if (_array != 0)
+			delete[] _array;
 		_array = new T[tmp.getSize()];
 		_size = tmp.getSize();
 		for (int i = 0; i < _size; i++)

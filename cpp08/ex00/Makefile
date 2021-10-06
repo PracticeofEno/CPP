@@ -1,10 +1,10 @@
-NAME = ex02
+NAME = ex00
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = clang++
 
 CFLAGS += -I ./inc/
 
-FILES = 
+FILES = easyfind
 
 SRCS = $(addprefix srcs/, $(addsuffix .cpp, $(FILES))) 
 
@@ -13,7 +13,7 @@ OBJS = $(SRCS:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : 
-	$(CC) $(CFLAGS) -g -o $(NAME) main2.cpp 
+	$(CC) $(CFLAGS) -g -o $(NAME) main.cpp 
 
 %.o : %.cpp
 	$(CC) $(CFLAGS) -g -c -o $@ $^
